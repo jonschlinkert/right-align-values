@@ -1,7 +1,7 @@
 {
   "name": "right-align-values",
-  "description": "Right align the values of a given property for each object in an array.",
-  "version": "0.1.1",
+  "description": "Right align the values of a given property for each object in an array. Useful for creating text columns or tables.",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/right-align-values",
   "author": {
     "name": "Jon Schlinkert",

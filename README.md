@@ -1,6 +1,6 @@
 # right-align-values [![NPM version](https://badge.fury.io/js/right-align-values.svg)](http://badge.fury.io/js/right-align-values)  [![Build Status](https://travis-ci.org/jonschlinkert/right-align-values.svg)](https://travis-ci.org/jonschlinkert/right-align-values) 
 
-> Right align the values of a given property for each object in an array.
+> Right align the values of a given property for each object in an array. Useful for creating text columns or tables.
 
 ## Install with [npm](npmjs.org)
 
