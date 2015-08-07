@@ -1,7 +1,7 @@
 {
   "name": "right-align-values",
   "description": "Right align the values of a given property for each object in an array. Useful for creating text columns or tables.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/jonschlinkert/right-align-values",
   "author": {
     "name": "Jon Schlinkert",
@@ -34,25 +34,31 @@
   },
   "keywords": [
     "align",
+    "alignment",
     "column",
+    "fill",
     "longest",
     "object",
     "pad",
     "right",
     "table",
+    "text",
     "value",
     "values"
   ],
   "verb": {
     "related": {
       "list": [
-        "right-pad-values",
         "longest",
         "longest-value",
+        "pad-left",
+        "pad-right",
         "repeat-element",
         "repeat-string",
-        "pad-left",
-        "pad-right"
+        "right-align-keys",
+        "right-align-values",
+        "right-pad-keys",
+        "right-pad-values"
       ]
     }
   }
