@@ -1,7 +1,7 @@
 {
   "name": "right-align-values",
   "description": "Right align the values of a given property for each object in an array. Useful for creating text columns or tables.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/jonschlinkert/right-align-values",
   "author": {
     "name": "Jon Schlinkert",
@@ -9,15 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jonschlinkert/right-align-values.git"
+    "url": "git+https://github.com/jonschlinkert/right-align-values.git"
   },
   "bugs": {
     "url": "https://github.com/jonschlinkert/right-align-values/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/jonschlinkert/right-align-values/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -29,8 +26,7 @@
     "test": "mocha"
   },
   "dependencies": {
-    "longest-value": "^0.1.0",
-    "pad-left": "^1.0.1"
+    "longest-value": "^0.2.0"
   },
   "devDependencies": {
     "mocha": "*",
@@ -46,5 +42,18 @@
     "table",
     "value",
     "values"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": [
+        "right-pad-values",
+        "longest",
+        "longest-value",
+        "repeat-element",
+        "repeat-string",
+        "pad-left",
+        "pad-right"
+      ]
+    }
+  }
 }
