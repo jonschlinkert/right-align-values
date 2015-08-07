@@ -9,7 +9,7 @@
 
 var longest = require('longest-value');
 
-module.exports = function rightPadValues(obj, prop) {
+module.exports = function rightAlignValues(obj, prop) {
   if (typeof obj !== 'object') {
     throw new TypeError('right-align-values expects an object or array.');
   }
