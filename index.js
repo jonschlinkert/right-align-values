@@ -8,6 +8,7 @@
 'use strict';
 
 var longest = require('longest-value');
+var pad = require('pad-left');
 
 module.exports = function rightAlignValues(obj, prop) {
   if (typeof obj !== 'object') {
@@ -28,7 +29,7 @@ function arrayValues(arr, prop) {
   while (len--) {
     var ele = arr[len];
     var val = ele[prop].toString();
-    ele[prop] = pad(val.length, max) + val;
+    ele[prop] = pad(val, max, ' ');
     res[len] = ele;
   }
   return res;
@@ -38,13 +39,9 @@ function objectValues(obj) {
   var max = longest(obj).length;
   for (var key in obj) {
     if (obj.hasOwnProperty(key)) {
-      var val = obj[key];
-      obj[key] = pad(val.length, max) + val;
+      var val = obj[key].toString();
+      obj[key] = pad(val, max, ' ');
     }
   }
   return obj;
-}
-
-function pad(len, max) {
-  return Array(max - len + 1).join(' ');
 }
