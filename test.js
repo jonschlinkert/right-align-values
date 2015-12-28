@@ -7,16 +7,16 @@
 
 'use strict';
 
-/* deps:mocha */
-var should = require('should');
+require('mocha');
+var assert = require('assert');
 var align = require('./');
 
 var arr = [{a: 'b'}, {a: 'bb'}, {a: 'bbbb'}, {a: 'bbb'}, {a: 'bb'}];
 
 describe('right align values', function () {
-  describe('array:', function () {
-    it('should right-align the values for the given property:', function () {
-      align(arr, 'a').should.eql([
+  describe('array', function () {
+    it('should right-align the values for the given property', function () {
+      assert.deepEqual(align(arr, 'a'), [
         {a: '   b'},
         {a: '  bb'},
         {a: 'bbbb'},
@@ -25,20 +25,89 @@ describe('right align values', function () {
       ]);
     });
   });
-  describe('object:', function () {
-    it('should right-pad the values of an object:', function () {
-      align({a: 'b', c: 'dddddd', e: 'fff', g: 'hhhhh'}).should.eql({
+
+  describe('objects', function () {
+    it('should right-align the values of an object', function () {
+      assert.deepEqual(align({a: 'b', c: 'dddddd', e: 'fff', g: 'hhhhh'}), {
         a: '     b',
         c: 'dddddd',
         e: '   fff',
         g: ' hhhhh',
       });
     });
+
+    it('should right-align values of a specific object property', function() {
+      var res = align('foo', {
+        a: {
+          foo: 'a',
+          bar: 'z'
+        },
+        b: {
+          foo: 'aaaaaaa',
+          bar: 'z'
+        },
+        c: {
+          foo: 'aaa',
+          bar: 'z'
+        }
+      });
+
+      assert.deepEqual(res, {
+        a: {
+          foo: '      a',
+          bar: 'z'
+        },
+        b: {
+          foo: 'aaaaaaa',
+          bar: 'z'
+        },
+        c: {
+          foo: '    aaa',
+          bar: 'z'
+        }
+      });
+    });
+
+    it('should right-align values for multiple properties', function() {
+      var res = align(['foo', 'bar'], {
+        a: {
+          foo: 'a',
+          bar: 'zzz'
+        },
+        b: {
+          foo: 'aaaaaaa',
+          bar: 'zz'
+        },
+        c: {
+          foo: 'aaa',
+          bar: 'zzzz'
+        }
+      });
+
+      assert.deepEqual(res, {
+        a: {
+          foo: '      a',
+          bar: ' zzz'
+        },
+        b: {
+          foo: 'aaaaaaa',
+          bar: '  zz'
+        },
+        c: {
+          foo: '    aaa',
+          bar: 'zzzz'
+        }
+      });
+    });
   });
 
-  it('should throw an error when an array is not passed:', function () {
-    (function () {
+  it('should throw an error when an array is not passed', function(cb) {
+    try {
       align();
-    }).should.throw('right-align-values expects an object or array.');
+      cb(new Error('expected an error'));
+    } catch (err) {
+      assert.equal(err.message, 'right-align-values expects an object or array.');
+      cb();
+    }
   });
 });
