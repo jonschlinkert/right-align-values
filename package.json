@@ -3,14 +3,8 @@
   "description": "Right align the values of a given property for each object in an array. Useful for creating text columns or tables.",
   "version": "0.2.2",
   "homepage": "https://github.com/jonschlinkert/right-align-values",
-  "author": {
-    "name": "Jon Schlinkert",
-    "url": "https://github.com/jonschlinkert"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jonschlinkert/right-align-values.git"
-  },
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/right-align-values",
   "bugs": {
     "url": "https://github.com/jonschlinkert/right-align-values/issues"
   },
