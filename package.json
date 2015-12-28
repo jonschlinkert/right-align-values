@@ -20,12 +20,12 @@
     "test": "mocha"
   },
   "dependencies": {
+    "isobject": "^2.0.0",
     "longest-value": "^0.2.0",
     "pad-left": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "should": "*"
+    "mocha": "*"
   },
   "keywords": [
     "align",
@@ -55,6 +55,10 @@
         "right-pad-keys",
         "right-pad-values"
       ]
-    }
+    },
+    "layout": "default",
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }
